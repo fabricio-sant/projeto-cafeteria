@@ -1,4 +1,4 @@
-# projeto-cafeteria - Meu Projeto
+# projeto-cafeteria - Meu Projeto - Mew
 Um site focado em apresentação de loja, descrição, cardápio, pedir atendimento, e geração de nota fiscal. 
 
 - Sobre o projeto
