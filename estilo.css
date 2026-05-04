@@ -1,10 +1,8 @@
 body {
-    background-color: #DEB887;
-}
-
-h1 {
-    color: #A0522D;
-    font-size: 60px;
+    margin: 0;
+    font-family: Georgia, sans-serif;
+    background: linear-gradient(135deg, #3b1f0f, #662d05);
+    color: white;
     text-align: center;
-
 }
+
