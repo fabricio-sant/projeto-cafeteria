@@ -23,6 +23,19 @@ body {
     z-index: 1000;
 }
 
+.apresentacao {
+    border: 3px solid #DEB887;
+    text-decoration-color: #4a2c06;
+    border-radius: 30px;
+    padding:  -90px -20px -60px -20px;
+
+     background-color: rgba(214, 159, 113, 0.8);
+}
+
+.apresentacao {
+    margin-top: 65px;
+}
+
 .btn-nav {
     background: transparent;
     border: 1px solid #f5e6d3;
