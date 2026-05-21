@@ -1,0 +1,57 @@
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-image: url('coffee-2.png');
+    background-size: cover;        
+    background-position: center;  
+    background-repeat: no-repeat; 
+    margin: 0;
+    min-height: 100vh;
+}
+
+.apresentacao {
+    color: rgb(3, 3, 3);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 24px;
+    margin: 0;
+    text-align: center;
+    height: 300px;
+}
+
+.titulo {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    height: 250px;
+}
+
+.subtitulo {
+    font-size: 24px;
+    margin-bottom: 20px;
+    height: 0px;
+}
+
+.btn-estilo {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-comecar {
+    display: inline-block;
+    padding: 10px 19px;
+    background: linear-gradient(135deg, #83461b, #4e2f06);
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btn-comecar:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, #4e2f06, #83461b);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+}

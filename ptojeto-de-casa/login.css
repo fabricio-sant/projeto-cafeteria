@@ -1,0 +1,175 @@
+body {
+    background-image: url('coffee-2.png');
+    background-size: cover;        
+    background-position: center;  
+    background-repeat: no-repeat; 
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+.camada-opaca {
+    background-color: rgba(0, 0, 0, 0.65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh; 
+}
+
+.titulo-login {
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 24px;
+    margin: 0;
+    text-align: center;
+}
+
+.subtitulo-login {
+    color: rgba(255, 255, 255, 0.8);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 14px;
+    margin: 0 0 10px 0;
+    text-align: center;
+    font-weight: normal;
+}
+
+label:has(+ input:optional)::after {
+    content: " (optional)";
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; 
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    height: 35px;
+    gap: 15px; 
+    width: 100%; 
+}
+
+.form-group label {
+    color: white;
+    font-size: 14px;
+    min-width: 50px; 
+}
+
+.form-group input {
+    border-radius: 8px;       
+    border: 1px solid #ccc;   
+    padding: 6px 12px;        
+    outline: none;            
+    flex-grow: 1;
+}
+
+.form-group input:focus {
+    border-color: rgb(204, 120, 64); 
+    box-shadow: 0 0 5px rgba(204, 120, 64, 0.5); 
+}
+
+/* Novo: Estrutura necessária para acoplar o olho dentro da caixa de texto */
+.input-wrapper {
+    position: relative;
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    height: 100%;
+}
+
+/* Novo: Força o input de senha a ocupar o espaço total da linha */
+.input-wrapper input {
+    width: 100%;
+    box-sizing: border-box;
+    padding-right: 40px; /* Cria espaço na direita para o texto não ficar embaixo do olho */
+}
+
+/* Novo: Posiciona o botão do olho de forma fixa dentro do input */
+.btn-olho {
+    position: absolute;
+    right: 8px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    height: 100%;
+}
+
+/* Novo: Altera a cor do olho ao passar o mouse */
+.btn-olho:hover {
+    color: rgb(119, 61, 7); 
+}
+
+/* Novo: Configuração do tamanho do ícone do Google */
+.material-symbols-outlined {
+    font-size: 20px;
+    user-select: none;
+}
+
+.pagina {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    border: 2px solid black;
+    padding: 35px; 
+    border-radius: 20px;
+    background: linear-gradient(135deg, rgb(119, 61, 7), rgb(204, 120, 64)); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Corrigido: Propriedades adicionadas corretamente */
+    max-width: 400px; 
+}
+
+.pagina:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.5);
+}
+
+.botoes-container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    width: 100%; 
+    gap: 15px;   
+    margin-top: 10px;
+}
+
+.btn-enviar {
+    border-radius: 16px;
+    padding: 10px 25px; 
+    background: rgb(117, 58, 18);
+    color: white; 
+    border: none; 
+    cursor: pointer; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Corrigido: Propriedades adicionadas corretamente */
+}
+
+.btn-enviar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.btn-secundario {
+    background: transparent; 
+    color: rgba(255, 255, 255, 0.9); 
+    border: 1px solid rgba(255, 255, 255, 0.5); 
+    border-radius: 16px;
+    padding: 10px 20px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.3s ease; 
+}
+
+.btn-secundario:hover {
+    background: rgba(255, 255, 255, 0.15); 
+    transform: translateY(-3px); 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}

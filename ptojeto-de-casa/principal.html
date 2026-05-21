@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principal - Zenith Coffee</title>
+    <link rel="stylesheet" href="principal.css">
+</head>
+
+<body>
+    <!-- TEXTOS DE FUNDO (MARCA D'ÁGUA) -->
+    <div class="textos-fundo-container">
+        <div class="texto-fundo-item" style="top: 25%; left: 5%; font-size: 8vw;">COFFEE</div>
+        <div class="texto-fundo-item" style="top: 55%; right: 5%; font-size: 7vw;">ARABICA</div>
+        <div class="texto-fundo-item" style="top: 80%; left: 15%; font-size: 6vw;">ZENITH</div>
+    </div>
+
+    <!-- CABEÇALHO CORRIGIDO -->
+    <header class="header">
+        <h1 class="logo">Zenith Coffee</h1>
+        
+        <div class="menu-container">
+            <button class="btn-toggle" id="btnMenu" onclick="toggleMenu()">
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+            </button>
+            
+            <nav class="menu-horizontal" id="menuLateral">
+                <a href="cardapio.html" class="cardapio"><strong>Cardápio</strong></a>
+                <a href="gerar_comanda.html" class="comanda"><strong>Comanda</strong></a>
+                <a href="chamar_garcom.html" class="garcom"><strong>Chamar Garçom</strong></a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CARD DE CURIOSIDADES COM EFEITO 3D -->
+    <div class="balao-curiosidade" id="balaoCuriosidade">
+        <div class="balao-conteudo">
+            <span class="balao-icone">☕</span>
+            <p id="textoCuriosidade">Bem-vindo ao Zenith Coffee!</p>
+        </div>
+    </div>
+
+    <script src="principal.js"></script>
+</body>
+</html>

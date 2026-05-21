@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- CORRIGIDO: Link completo para carregar os ícones oficiais do Google -->
+    <link rel="stylesheet" href="https://googleapis.com" />
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <div class="camada-opaca">
+        <main class="pagina">
+            <form action="/enviar-dados" method="POST">
+                <h1 class="titulo-login">Junte-se a nós na Zenith Coffee!</h1>
+                <h2 class="subtitulo-login"><strong>Junte-se a nós ou continue sem login.</strong></h2>
+
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+
+                <div class="form-group campo-senha">
+                    <label for="senha">Senha</label>
+                    <div class="input-wrapper">
+                        <input type="password" id="senha" required>
+                        <button type="button" id="btn-mostrar-senha" class="btn-olho" aria-label="Mostrar senha">
+                            <button type="button" id="btn-mostrar-senha" class="btn-olho"
+                                aria-label="Mostrar senha"><span class="material-symbols-outlined"
+                                    id="icone-olho">visibility</span></button>
+                            <button type="button" id="btn-mostrar-senha" class="btn-olho"
+                                aria-label="Mostrar senha"><span class="material-symbols-outlined"
+                                    id="icone-olho">visibility</span></button>
+
+                    </div>
+                </div>
+
+                <div class="botoes-container">
+                    <a href="principal.html"><button type="button" class="btn-secundario">Continuar sem login</button></a>
+                    <button type="submit" class="btn-enviar">Enviar</button>
+                </div>
+            </form>
+        </main>
+    </div>
+    <!-- ATENÇÃO: O seu arquivo de script deve estar salvo com o nome exato de 'login.js' na mesma pasta -->
+    <script src="login.js"></script>
+</body>
+
+</html>
