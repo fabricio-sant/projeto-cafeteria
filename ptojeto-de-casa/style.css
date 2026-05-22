@@ -5,36 +5,48 @@ body {
     background-position: center;  
     background-repeat: no-repeat; 
     margin: 0;
-    min-height: 100vh;
+    height: 100vh;
+    /* Ativa o Flexbox para centralizar tudo na tela */
+    display: flex;
+    justify-content: center; /* Centraliza na horizontal */
+    align-items: center;     /* Centraliza na vertical */
+}
+
+/* Container criado para segurar a main e o botão juntos */
+.container-central {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.226); /* Fundo leve opaco para dar leitura */
+    padding: 300px;
+    border-radius: 36px;
+    backdrop-filter: blur(5px); /* Efeito de vidro fosco no fundo */
 }
 
 .apresentacao {
     color: rgb(3, 3, 3);
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 24px;
-    margin: 0;
-    text-align: center;
-    height: 100px;
-}
-
-
-.subtitulo {
     font-size: 24px;
     margin-bottom: 20px;
 }
 
+.titulo {
+    margin: 0 0 10px 0;
+    font-size: 42px;
+}
+
+.subtitulo {
+    font-size: 20px;
+    margin: 0;
+}
+
 .btn-estilo {
-    text-align: center;
-    margin-top: 20px;
+    margin-top: 25px;
 }
 
 .btn-comecar {
     display: inline-block;
-    padding: 10px 19px;
+    padding: 12px 24px;
     background: linear-gradient(135deg, #83461b, #4e2f06);
     color: white;
-    text-decoration: none;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: bold;
     border-radius: 12px;
     border: none;
