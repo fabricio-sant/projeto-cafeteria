@@ -1,7 +1,5 @@
-/* --- CONFIGURAÇÕES GERAIS E BASE --- */
 body {
     margin: 0;
-    padding-top: 100px; /* Cria o espaço exato para o cabeçalho não cobrir o conteúdo */
     background: linear-gradient(135deg, oklch(27.882% 0.05205 48.418), #DEB887);
     color: #f5e6d3;
     text-align: center;
@@ -10,12 +8,10 @@ body {
     background-attachment: fixed;
     background-position: center;
     overflow-x: hidden;
-    
-    /* Habilita o efeito de profundidade 3D na página inteira */
-    perspective: 1000px; 
+    /* Evita barras de rolagem horizontais por causa dos textos grandes */
 }
 
-html {
+ html {
     scroll-behavior: smooth;
 }
 
@@ -27,8 +23,11 @@ html {
     width: 100%;
     height: 100%;
     pointer-events: none;
+    /* Torna o texto invisível ao clique (o cliente clica através dele) */
     z-index: 1;
+    /* Fica atrás de todo o conteúdo principal */
     user-select: none;
+    /* Impede o usuário de selecionar o texto por acidente */
 }
 
 .texto-fundo-item {
@@ -38,25 +37,22 @@ html {
     letter-spacing: 5px;
     color: #f5e6d3;
     opacity: 0.03;
+    /* Super suave e sutil para não poluir visualmente */
     text-transform: uppercase;
 }
 
-/* --- CABEÇALHO PREMIUM TRAVADO NO TOPO (GLASSMORPHISM) --- */
+/* --- CABEÇALHO PREMIUM (GLASSMORPHISM) --- */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 60px;
+    padding: 10px 60px;
     background: rgba(35, 18, 2, 0.75);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     border-bottom: 1px solid rgba(192, 138, 77, 0.2);
-    
-    /* Correção: Força o cabeçalho a ficar totalmente colado no topo */
     position: fixed;
     top: 0;
-    left: 0;
-    
     width: 100%;
     box-sizing: border-box;
     z-index: 1000;
@@ -71,7 +67,6 @@ html {
     letter-spacing: 1px;
     background: linear-gradient(135deg, #f5e6d3, #c08a4d);
     -webkit-background-clip: text;
-    background-clip: text;
     -webkit-text-fill-color: transparent;
     cursor: default;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -84,7 +79,6 @@ html {
     gap: 20px;
 }
 
-/* --- BOTÃO HAMBÚRGUER --- */
 .btn-toggle {
     display: flex;
     flex-direction: column;
@@ -101,7 +95,7 @@ html {
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     box-sizing: border-box;
-    z-index: 1002; /* Garante que fique acima do menu lateral */
+    z-index: 1001;
 }
 
 .btn-toggle:hover {
@@ -130,47 +124,32 @@ html {
     transform: translateY(-8px) rotate(-45deg);
 }
 
-/* --- MENU LATERAL (ESTILO GAVETA) --- */
 .menu-horizontal {
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: 280px; 
-    background: rgba(35, 18, 2, 0.95);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-left: 1px solid rgba(192, 138, 77, 0.2);
     display: flex;
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: center; 
-    padding: 60px 20px;
-    box-sizing: border-box;
-    
-    /* Estado Escondido para fora da tela */
-    transform: translateX(100%); 
-    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    z-index: 1001; 
+    gap: 15px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(110%);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .menu-horizontal.ativo {
-    transform: translateX(0); /* Desliza para dentro da tela */
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
 }
 
 .menu-horizontal a {
     text-decoration: none;
     color: #f5e6d3;
-    padding: 12px 24px;
+    padding: 10px 20px;
     border: 1px solid rgba(245, 230, 211, 0.5);
     border-radius: 25px;
     transition: all 0.3s ease;
-    font-size: 15px;
+    font-size: 14px;
     background: rgba(74, 44, 6, 0.6);
+    backdrop-filter: blur(5px);
     white-space: nowrap;
-    margin: 12px 0; 
-    width: 80%;
-    display: inline-block;
 }
 
 .menu-horizontal a:hover {
@@ -180,10 +159,12 @@ html {
     transform: translateY(-2px);
 }
 
-/* --- CARD DE CURIOSIDADES COM EFEITO 3D --- */
+/* --- CARD DE CURIOSIDADES --- */
 .balao-curiosidade {
     position: relative;
-    margin: 40px auto 0 auto; /* Centralizado e com espaçamento suave após o cabeçalho */
+    margin-top: 110px;
+    margin-left: auto;
+    margin-right: auto;
     background: rgba(74, 44, 6, 0.85);
     backdrop-filter: blur(8px);
     border: 1px solid #c08a4d;
@@ -192,24 +173,9 @@ html {
     width: 90%;
     max-width: 550px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    z-index: 10;
+    transition: opacity 0.5s ease, transform 0.5s ease;
     box-sizing: border-box;
-    z-index: 10; 
-    
-    /* Configuração de transições normais e do efeito de empurrar */
-    transition: 
-        opacity 0.6s ease, 
-        transform 0.6s cubic-bezier(0.23, 1, 0.32, 1),
-        visibility 0.6s ease;
-    
-    transform: translateZ(0) scale(1);
-    visibility: visible;
-}
-
-/* Quando o menu abre, esta classe faz o card afundar na tela e sumir */
-.balao-curiosidade.indo-para-tras {
-    opacity: 0;
-    transform: translateZ(-400px) scale(0.75); 
-    visibility: hidden; 
 }
 
 .balao-conteudo {
@@ -221,7 +187,6 @@ html {
 
 .balao-icone {
     font-size: 22px;
-    display: inline-block;
     animation: pulsar 2s infinite ease-in-out;
 }
 
@@ -235,26 +200,19 @@ html {
     font-weight: 500;
 }
 
-/* Efeito interno para o fade do texto automático */
 .balao-escondido {
     opacity: 0;
     transform: translateY(10px);
 }
 
 @keyframes pulsar {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.15); }
-}
 
-/* --- RESPONSIVIDADE PARA CELULARES --- */
-@media (max-width: 600px) {
-    .header {
-        padding: 10px 20px;
+    0%,
+    100% {
+        transform: scale(1);
     }
-    .logo {
-        font-size: 20px;
-    }
-    .menu-horizontal {
-        width: 100%; /* O menu vira tela cheia no mobile para ficar mais confortável */
+
+    50% {
+        transform: scale(1.15);
     }
 }
